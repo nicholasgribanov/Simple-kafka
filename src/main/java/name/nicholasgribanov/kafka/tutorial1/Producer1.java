@@ -21,8 +21,11 @@ public class Producer1 {
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
         for (int i = 0; i < 10; i++) {
+            String key = "id_" +i;
 
-            ProducerRecord<String, String> record = new ProducerRecord<String, String>("first_topic", "Hello, World! " + i);
+            String topic = "first_topic";
+            String value = "Hello, World! " + i;
+            ProducerRecord<String, String> record = new ProducerRecord<String, String>(topic, key, value);
 
             producer.send(record, new Callback() {
                 public void onCompletion(RecordMetadata recordMetadata, Exception e) {
