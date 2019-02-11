@@ -1,4 +1,4 @@
-package name.nicholasgribanov.kafka.tutorial1;
+package name.nicholasgribanov.kafka;
 
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
-public class Producer1 {
-    private static final Logger log = LoggerFactory.getLogger(Producer1.class);
+public class Producer {
+    private static final Logger log = LoggerFactory.getLogger(Producer.class);
 
     public static void main(String[] args) {
         String bootstrapServer = "127.0.0.1:9092";
